@@ -43,7 +43,7 @@ class CombinedLoss(nn.Module):
         loss_kd += self.sinkhorn_loss(p_enm.view(p_enm.size(0), -1), p_teacher_enm.view(p_teacher_enm.size(0), -1))
 
         # ==========================
-        # 2. 监督损失计算（从batch生成）
+        # 2. supervision loss
         # ==========================
         loss_supervised = torch.tensor(0.0, device=self.device)
         prediction = torch.tensor([], device=self.device)

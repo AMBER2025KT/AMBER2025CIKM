@@ -80,7 +80,6 @@ class lossFuncTask(nn.Module):
         self.sig = nn.Sigmoid()
         self.max_step = max_step
         self.device = device
-        # 移除了 kd_loss 相关的初始化
         self.mse = nn.MSELoss()
 
     def forward(self, logit_c, logit_t, batch):
